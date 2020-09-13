@@ -26,6 +26,7 @@ a {
     height: 44px;
     top:0;
     left:0;
+    z-index: 10;
     padding: 0 1rem;
     background: yellow;
 }
@@ -46,6 +47,7 @@ a {
     height: 50px;
     top: 45px;
     left: 0;
+    z-index: 11;
     padding: 0 1rem;
     border-bottom: 1px solid #ddd;
 }
@@ -69,7 +71,6 @@ a {
 }
 
 .scroll_section {
-    border: solid 1px red;
     position: relative;
     padding-top: 50vh;
 }
@@ -78,6 +79,7 @@ a {
     font-size: 4rem;
     position: relative;
     text-align: center;
+    z-index:5;
     /* display: flex;
     align-items: center;
     justify-content: center; */
@@ -85,16 +87,16 @@ a {
     /* background-color: rosybrown; */
 }
 
-
 .main_message {
     display:flex;
     justify-content: center;
     align-items: center;
-    background-color: rosybrown;
     line-height: 1.2;
     margin: 5px 0;
     height: 3em;
+    top: 35vh;
     font-size: 2.5rem;
+    opacity: 0;
 }
 
 .main_message p {
@@ -119,16 +121,20 @@ a {
 }
 
 .description_message {
-
     width: 50%;
     font-weight: bold;
-    
+    opacity: 0;   
 }
 
 .pin{
     height: 100px;
     width: 1px;
     background-color: rgb(29, 29, 31);
+}
+
+#scroll_section_2 .b {
+    top:10%;
+    left: 40%;
 }
 
 .footer {
@@ -142,18 +148,28 @@ a {
 .sticky_element {
     display: none;
     position: fixed;
-    top:0;
     left:0;
     width: 100%;
 }
 
-#show_scene_0 #srcoll_section_0 .sticky_element,
-#show_scene_1 #srcoll_section_1 .sticky_element,
-#show_scene_2 #srcoll_section_2 .sticky_element,
-#show_scene_3 #srcoll_section_3 .sticky_element{
+#show_scene_0 #scroll_section_0 .sticky_element,
+#show_scene_1 #scroll_section_1 .sticky_element,
+#show_scene_2 #scroll_section_2 .sticky_element,
+#show_scene_3 #scroll_section_3 .sticky_element{
     display: block;
 }
 
+.sticky_element_canvas {
+    top:0;
+    height: 100%;
+}
+
+.sticky_element_canvas canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+}
 
 @media (min-width: 1024px) {
     #scroll_section_0 h1{
@@ -167,6 +183,11 @@ a {
     }
     .normal_message strong{
         font-size: 6rem;
+    }
+
+    #scroll_section_2 .b {
+        top: 20%;
+        left: 53%;
     }
     #scroll_section_3 .main_message {
         font-size: 6vw;
